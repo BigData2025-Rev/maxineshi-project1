@@ -40,35 +40,6 @@ The Store is a Python-based application that allows users to create accounts, pu
 pip install requirements.txt
 ```
 
-## Project Structure
-
-```
-store-app
-├── src
-│   ├── __init__.py
-│   ├── main.py
-│   ├── models
-│   │   ├── __init__.py
-│   │   ├── account.py
-│   │   ├── product.py
-│   │   └── order.py
-│   ├── services
-│   │   ├── __init__.py
-│   │   ├── account_service.py
-│   │   ├── product_service.py
-│   │   └── order_service.py
-│   ├── controllers
-│   │   ├── __init__.py
-│   │   ├── account_controller.py
-│   │   ├── product_controller.py
-│   │   └── order_controller.py
-│   └── utils
-│       ├── __init__.py
-│       └── logger.py
-├── requirements.txt
-└── README.md
-```
-
 ## Installation
 
 1. Clone the repository:
@@ -77,7 +48,7 @@ store-app
    ```
 2. Navigate to the project directory:
    ```
-   cd store-app
+   cd project1
    ```
 3. Install the required dependencies:
    ```
