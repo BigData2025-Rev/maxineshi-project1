@@ -2,7 +2,7 @@ from typing import List, Union
 from bson.objectid import ObjectId
 from db.connection import get_db
 
-db = get_db()
+db = get_db("products")
 
 def add_product(name: str, description: str, price: float, stock: int, category: str) -> str:
     """Add a new product to the inventory."""

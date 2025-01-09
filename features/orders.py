@@ -2,7 +2,7 @@ from datetime import datetime
 from db.connection import get_db
 from utils import logger  # Assuming you have a logger setup in utils.py
 
-db = get_db()
+db = get_db("orders")
 
 def create_order(user_id, products):
     """

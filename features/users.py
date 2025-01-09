@@ -3,7 +3,7 @@ from db.connection import get_db
 from utils import hash_password, check_password
 from utils import logger
 
-db = get_db()
+db = get_db("users")
 
 def check_username_exists(username):
     """Check if the username already exists."""

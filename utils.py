@@ -12,6 +12,7 @@ def check_password(password, hashed):
     return bcrypt.checkpw(password.encode("utf-8"), hashed)
 
 logger = logging.getLogger(__name__)
+
 if not logger.hasHandlers():
     logger.setLevel(logging.DEBUG)
 
