@@ -2,6 +2,7 @@ from features.users import create_user, login_user, check_username_exists
 from features.products import get_all_products
 from features.orders import create_order, get_user_orders
 from admin import admin_panel
+from utils import logger
 import getpass
 
 def main():
@@ -13,12 +14,11 @@ def main():
         choice = int(input("Choose an option: "))
         if choice == 1:
             # Registration Process
-            while True:
-                username = input("Enter a username: ")
-                if check_username_exists(username):
-                    print("Error: Username already exists. Please choose a different username.")
-                else:
-                    break
+            username = input("Enter a username: ")
+            if check_username_exists(username):
+                logger.warning("Error: Username already exists. Please choose a different username.")
+                continue
+
             password = getpass.getpass("Enter a password: ")
             result = create_user(username, password)
             print(result)
@@ -26,7 +26,10 @@ def main():
         elif choice == 2:
             # Login Logic
             username = input("Username: ")
-            password = input("Password: ")
+            if not check_username_exists(username):
+                logger.warning("Error: Username does not exists. Please ensure the username is correct.")
+                continue
+            password = getpass.getpass("Password: ")
             login_result = login_user(username, password)
             if login_result["success"]:
                 print(login_result["message"])
